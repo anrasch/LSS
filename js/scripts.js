@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('nav ul');
+    const nav = document.querySelector('nav');
+    const navItems = document.querySelectorAll('nav ul li a');
     const header = document.getElementById('header');
     const heroSlides = document.querySelectorAll('.hero-slide');
     const heroIndicators = document.querySelectorAll('.hero-indicator');
@@ -17,6 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         nav.classList.toggle('active');
+    });
+
+    // Close the menu when a nav item is clicked
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            nav.classList.remove('active');
+        });
     });
 
     const handleScroll = () => {
