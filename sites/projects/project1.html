@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Updates</title>
+    <link rel="stylesheet" href="projectstyles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="../../media/img/fav.jpg" type="image/x-icon">
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <img src="../../media/img/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../../index.html#projects">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="project-details" class="project-details">
+            <h1>Project Title</h1>
+            <div class="project-description">
+                <p>This project is focused on ... (provide a detailed description here).</p>
+            </div>
+            <div class="updates-section">
+                <div class="timeline">
+                    <h2>Updates Timeline</h2>
+                    <ul class="timeline-list">
+                        <li data-date="2024-07-04" data-description="Update details for July 4, 2024">July 4, 2024</li>
+                        <li data-date="2024-06-28" data-description="Update details for June 28, 2024">June 28, 2024</li>
+                        <!-- More timeline items can be added similarly -->
+                    </ul>
+                </div>
+                <div class="updates">
+                    <div class="update">
+                        <div class="update-image">
+                            <img src="../../media/img/update1.jpg" alt="Update Image">
+                        </div>
+                        <div class="update-content">
+                            <h3>Update Title - Date</h3>
+                            <p>Details about the update...</p>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="update-image">
+                            <img src="../../media/img/update2.jpg" alt="Update Image">
+                        </div>
+                        <div class="update-content">
+                            <h3>Update Title - Date</h3>
+                            <p>Details about the update...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content" id="kontakt">
+            <div class="social-media">
+                <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://pinterest.com"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LunaScript. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="ebooksscript.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-list li');
+            
+            timelineItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    alert(item.getAttribute('data-description'));
+                });
+
+                item.addEventListener('mouseover', function() {
+                    const tooltip = document.createElement('div');
+                    tooltip.classList.add('tooltip');
+                    tooltip.textContent = item.getAttribute('data-description');
+                    document.body.appendChild(tooltip);
+                    const rect = item.getBoundingClientRect();
+                    tooltip.style.left = `${rect.left + window.scrollX}px`;
+                    tooltip.style.top = `${rect.top + window.scrollY - 30}px`;
+                });
+
+                item.addEventListener('mouseout', function() {
+                    const tooltip = document.querySelector('.tooltip');
+                    if (tooltip) {
+                        tooltip.remove();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
