@@ -1,283 +1,73 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luna Script Studio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="media/img/fav.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('media/img/language.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            overflow: hidden;
+        }
+        .blurred-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1;
+        }
+        .popup {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.373);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .popup h1 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            background: #f39c12;
+            color: black;
+            transition: background 0.3s ease;
+        }
+        .button-container button:hover {
+            background: #e67e22;
+        }
+    </style>
 </head>
 <body>
-    <header id="header">
-        <div class="logo">
-            <a href="#home"><img src="media/img/logo.png" alt="logo"></a>
+    <div class="blurred-bg"></div>
+    <div class="popup">
+        <h1>Choose your language</h1>
+        <div class="button-container">
+            <button onclick="window.location.href='landing/landing_de.html'">Deutsch</button>
+            <button onclick="window.location.href='landing/landing_en.html'">English</button>
         </div>
-        <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#ebooks">Ebooks</a></li>
-                <li><a href="#projekte">Projects</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#galerie">Gallery</a></li>
-                <li><a href="#kontakt">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home">
-        <div class="hero-section">
-            <div class="hero-slideshow">
-                <div class="hero-slide active">
-                    <img src="media/img/header1.jpg" alt="Hero Image 1">
-                    <div class="hero-content">
-                        <h1>Luna Script Studio</h1>
-                        <p>Fantasy Novels and Short Stories</p>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <video src="media/vids/hero-video.mp4" autoplay muted loop></video>
-                    <div class="hero-content">
-                        <h1>Your Exclusive E-Books Directly from the Author!</h1>
-                        <p>Experience unique stories and valuable insights firsthand – exclusively as e-books, written by me directly for you.</p>
-                        <a href="#ebooks" class="button">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <img src="media/img/header2.jpg" alt="Hero Image 2">
-                    <div class="hero-content">
-                        <h1>Discover My Unique Projects!</h1>
-                        <p>Dive into innovative ideas and exciting executions – exclusive projects, passionately and creatively brought to life by me.</p>
-                        <a href="#projekte" class="button">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <img src="media/img/header3.jpg" alt="Hero Image 3">
-                    <div class="hero-content">
-                        <h1>Stay Updated with Our News!</h1>
-                        <p>Get the latest updates and exciting announcements – directly from the source and always up-to-date.</p>
-                        <a href="#news" class="button">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-slide">
-                    <img src="media/img/header4.jpg" alt="Hero Image 3">
-                    <div class="hero-content">
-                        <h1>Experience Visual Highlights in Our Gallery!</h1>
-                        <p>Discover stunning images and inspiring works – an exclusive selection providing you with a unique glimpse into my creative projects.</p>
-                        <a href="sites/gallery/gallery.html" class="button" target="_blank">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-indicators">
-                <span class="indicator active hero-indicator" data-slide="0"></span>
-                <span class="indicator hero-indicator" data-slide="1"></span>
-                <span class="indicator hero-indicator" data-slide="2"></span>
-                <span class="indicator hero-indicator" data-slide="3"></span>
-                <span class="indicator hero-indicator" data-slide="4"></span>
-            </div>
-        </div>
-    </section>
-    <!-- Nova Polis -->
-    <section id="ebooks">
-        <h2>Ebooks</h2>
-        <div class="inline">
-        <p>Unique Tales from Nova Polis: Each short story a captivating adventure in the futuristic city.</p>
-        <i class="fa-solid fa-arrow-right"></i>
-        </div>
-        <div class="ebook-section">
-            <div class="ebook-slideshow">
-                <div class="ebook-slide active">
-                    <img src="media/img/ebook1.jpg" alt="Ebook 1">
-                    <div class="ebook-content">
-                        <a href="sites/ebooks/ebook1.html" class="button">See More</a>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="media/img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <a href="sites/ebooks/ebook2.html" class="button">See More</a>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="media/img/ebook3.jpg" alt="Ebook 3">
-                    <div class="ebook-content">
-                        <a href="sites/ebooks/ebook3.html" class="button">See More</a>
-                    </div>
-                </div>
-                <!-- Weitere Ebook Slides -->
-            </div>
-        </div>
-    </section>
-    <section>
-        <p>another short stories</p>
-        <div class="ebook-section">
-            <div class="ebook-slideshow">
-                <div class="ebook-slide active">
-                    <img src="media/cover/anya_luna.jpg" alt="Anya & Luna">
-                    <div class="ebook-content">
-                        <button>See More</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 2</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 3</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 4</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 5</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <!-- Weitere Ebook Slides -->
-            </div>
-        </div>
-    </section> 
-    <section id="projekte">
-        <h2>Projekte</h2>
-        <div class="ebook-section">
-            <div class="ebook-slideshow">
-                <div class="ebook-slide">
-                    <img src="media/projects/project1.jpg" alt="Project 1">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 1</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <a href="sites/projects/project1.html" class="button">See More</a>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <video src="media/vids/project-video.mp4" autoplay muted loop></video>
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 2</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="media/projects/project3.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 3</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 4</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 5</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <!-- Weitere Ebook Slides -->
-            </div>
-        </div>
-    </section>
-    <section id="news">
-        <h2>News</h2>
-        <div class="ebook-section">
-            <div class="ebook-slideshow">
-                <div class="ebook-slide active">
-                    <img src="img/ebook1.jpg" alt="Ebook 1">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 1</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 2</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 3</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 4</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <div class="ebook-slide">
-                    <img src="img/ebook2.jpg" alt="Ebook 2">
-                    <div class="ebook-content">
-                        <h3>Ebook Titel 5</h3>
-                        <p>Kurzbeschreibung des Buches.</p>
-                        <button>Buy Now</button>
-                    </div>
-                </div>
-                <!-- Weitere Ebook Slides -->
-            </div>
-        </div>
-    </section>
-    <section id="galerie">
-        <h2>Galerie</h2>
-        <div class="gallery">
-            <video src="media/vids/gallery-video.mp4" autoplay muted loop></video>
-            <div class="ebook-content">
-            <a href="sites/gallery/gallery.html" class="button">Visit</a>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="footer-content" id="kontakt">
- <!--           <div class="contact-info">
-                <p>Kontaktinformationen: <a href="mailto:kontakt@beispiel.de">kontakt@beispiel.de</a></p>
-            </div>    -->
-            <div class="social-media">
-                <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
-                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
-                <a href="https://pinterest.com"><i class="fab fa-pinterest"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 LunaScript. All rights reserved.</p>
-        </div>
-    </footer>
-    <script src="js/scripts.js"></script>
+    </div>
 </body>
 </html>
