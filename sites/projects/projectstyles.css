@@ -72,6 +72,7 @@ main {
 .timeline {
     flex: 1;
     max-width: 300px;
+    cursor: none;
 }
 
 .timeline h2 {
@@ -134,14 +135,14 @@ main {
 }
 
 footer {
-    background-color: #000;
+    background-color: black;
     padding: 2em;
     text-align: center;
 }
 
 .footer-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1200px;
@@ -159,6 +160,11 @@ footer {
     color: #e67e22;
 }
 
+.social-media {
+    flex: 1;
+    text-align: center;
+}
+
 .footer-bottom {
     margin-top: 30px;
     font-size: 12px;
@@ -168,62 +174,8 @@ footer {
     color: #ccc;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    #header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo img {
-        height: 40px;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav ul li {
-        margin: 0.5em 0;
-    }
-
-    .project-details h1 {
-        font-size: 2.5em;
-    }
-
-    .updates-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .timeline {
-        max-width: 100%;
-    }
-
-    .updates {
-        width: 100%;
-    }
-
-    .update {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .update-image img {
-        margin-bottom: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    .project-details h1 {
-        font-size: 2em;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+social-media a:hover {
+    color: #f39c12;
 }
 
 .timeline-list li {
@@ -254,10 +206,14 @@ footer {
     opacity: 0.9;
 }
 
+.contact-info a {
+    color: #e67e22;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     #header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
@@ -266,7 +222,7 @@ footer {
     }
 
     header nav ul {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
     }
 
