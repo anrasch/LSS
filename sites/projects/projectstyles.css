@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000;
+    background-color: #121212;
     color: #ffffff;
     margin: 0;
     padding: 0;
@@ -11,8 +11,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #121212;
 }
 
 .logo img {
@@ -135,7 +134,7 @@ main {
 }
 
 footer {
-    background-color: black;
+    background-color: #121212;
     padding: 2em;
     text-align: center;
 }

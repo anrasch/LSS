@@ -44,4 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
+    // Back Button Popup
+    const backButton = document.getElementById('backButton');
+    
+    backButton.addEventListener('click', function() {
+        window.history.back();
+    });
 });
