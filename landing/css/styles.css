@@ -393,7 +393,8 @@ nav ul li a:hover {
     justify-content: center;
 }
 
-.gallery video {
+.gallery video,
+.gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -415,7 +416,8 @@ nav ul li a:hover {
       flex-direction: column;
     }
   
-    .gallery video {
+    .gallery video,
+    .gallery img {
       width: 90%;
       margin: 0 auto;
       pointer-events: none;
